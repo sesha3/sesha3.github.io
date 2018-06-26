@@ -2,34 +2,5 @@
 
 </head>
 <body>
-	<iframe id="frame-div" width="100%" height="100%" frameborder="0" src="http://localhost:5000/en-us/dashboards/embed/Sample%20Dashboards/Tickets%20Sold%20Analysis%20Dashboard?hassso=false" onload="apiCall()"></iframe>
-    <script>
-        $(document).ready(function() {
-            jQuery.support.cors = true;
-        });
-
-        function apiCall() {
-            var dataValue = "";
-            var element = document.getElementById("frame-div").contentWindow;
-            var apiRequest = new Object();
-            var baseURL = "http://localhost:5000"; //Replace here with the launched Dashboard Server site URL
-            apiRequest.validationkey = "D776D853042BA30DD3F2B01335ACE764D116EC92927E83EFED6C7A3D26E6047DDFC44836E6FAC3EF45BA0BC442E59FE1F928CAA1DCFE647E0BF66BF22D592C0C"; //Find the Validation key in Machinekey node of the Dashboard Server web.config file
-            apiRequest.decryptionKey = "771713D1BEFD17C764E9C6F28FA4BBC227952ED567B962AE"; //Find the Decryption key in Machinekey node of the Dashboard Server web.config file
-            apiRequest.userid = "admin"; //Username/Userid of the user who has permission to the particular Dashboard
-            apiRequest.password = "Admin@123"; //Password of the user.Its optional when validationkey and decryptionkey is used.
-            $.ajax({
-                type: "POST",
-                url: baseURL + "/api/get-user-key",
-                data: apiRequest,
-                success: function(data) {
-                    dataValue = data.Token;
-                    element.postMessage(dataValue, "*");
-                },
-                error: function(data) {
-                    element.postMessage("", "*");
-                }
-            });
-        }
-    </script>
-
+HI
 </body></html>
